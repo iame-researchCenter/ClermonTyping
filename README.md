@@ -61,7 +61,6 @@ Script usage :
         --minimal                       : output a minimal set of files (optional)
         --fastafile                     : file with path of fasta contig file.  One file by line (optional)
         --summary                       : file with path of *_phylogroups.txt. One file by line (optional)
-
 ```
 
 This script will execute the pipeline blast, mash and python to give the full output (html file by default) or only the `*_phylogroups.txt` files (--minmal). 
