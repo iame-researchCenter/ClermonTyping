@@ -50,7 +50,7 @@ __http://clermontyping.iame-research.center/.__
 
 ### Main script usage
 
-```bash
+```
 % clermonTyping.sh
 Script usage :
 	-h				: print this message and exit
@@ -64,7 +64,7 @@ Script usage :
 
 ```
 
-This script will execute the pipeline blast, mash and python to give the full output (html file). 
+This script will execute the pipeline blast, mash and python to give the full output (html file by default) or only the `*_phylogroups.txt` files (--minmal). 
 
 If you need to analyse several fasta files you can list them with a @ sign (absolute path required):
 ```
@@ -72,9 +72,10 @@ If you need to analyse several fasta files you can list them with a @ sign (abso
 ```
 or use a file with the option --fastafile:
 ```
-% clermonTyping.sh --fastafile fileWithFasta
+% clermonTyping.sh --fastafile fileWithFasta.txt
 ```
 
+Exemple of fileWithFasta.txt
 ```
 my_ecoli1.fasta
 my_ecoli2.fasta
