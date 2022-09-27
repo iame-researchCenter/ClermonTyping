@@ -54,9 +54,14 @@ __http://clermontyping.iame-research.center/.__
 % clermonTyping.sh
 Script usage :
 	-h				: print this message and exit
-	--fasta				: fasta contigs file(s). If multiple files, they must be separated by an arobase (@) value
-	--name				: name for this analysis (optional)
-	--threshold			: Option for ClermontTyping, do not use contigs under this size (optional)
+        -v                                      : print the version and exit
+        --fasta                                 : fasta contigs file(s). If multiple files, they must be separated by an arobase (@) value
+        --name                                  : name for this analysis (optional)
+        --threshold                             : option for ClermontTyping, do not use contigs under this size (optional)
+        --minimal                               : output a minimal set of files (optional)
+        --fastafile                             : file with path of fasta contig file.  One file by line (optional)
+        --summary                               : file with path of *_phylogroups.txt. One file by line (optional)
+
 ```
 
 This script will execute the pipeline blast, mash and python to give the full output (html file). If you need to analyse several fasta files you can list them with a @ sign (absolute path required):
