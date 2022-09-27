@@ -50,7 +50,7 @@ __http://clermontyping.iame-research.center/.__
 
 ### Main script usage
 
-```
+```bash
 % clermonTyping.sh
 Script usage :
 	-h				: print this message and exit
@@ -64,11 +64,22 @@ Script usage :
 
 ```
 
-This script will execute the pipeline blast, mash and python to give the full output (html file). If you need to analyse several fasta files you can list them with a @ sign (absolute path required):
+This script will execute the pipeline blast, mash and python to give the full output (html file). 
+
+If you need to analyse several fasta files you can list them with a @ sign (absolute path required):
 ```
 % clermonTyping.sh --fasta my_ecoli1.fasta@my_ecoli2.fasta@my_ecoli3.fasta
 ```
+or use a file with the option --fastafile:
+```
+% clermonTyping.sh --fastafile fileWithFasta
+```
 
+```
+my_ecoli1.fasta
+my_ecoli2.fasta
+my_ecoli3.fasta
+```
 
 ### Clermont Typing without mash and R
 
