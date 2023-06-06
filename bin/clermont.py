@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Current Version - 21.03: Mar 2021
+Current Version - 23.06: Jun 2023
+        23.06:
+            -  Add fdm markers with quadruplex -++- to select B2 or H
         21.03:
-	    - Adding an essential primer for F group
             - Change the mash database 
-	21.02: 
+	    21.02: 
             - Change arpAgpE primers by fdm primers for E group
         1.4.0:
             - Adding an essential primer for G group
@@ -62,7 +63,7 @@ from Bio.Blast import NCBIXML
 #Definition of Primers names and size of PCR product (bp)
 class Primers:
     def __init__(self):
-        self.names = {"trpA": 783, "trpBA": 489, "chuAalbertii": 136, "citPferg": 300, "chuA": 288, "yjaA": 211, "TspE4.C2": 152, "arpA": 400, "fdm": 265, "trpAgpC": 219, "aesI": 315, "aesII": 125, "chuIII": 183, "chuIV": 461, "chuV": 600, "ybgD": 177, "cfaB" : 314}
+        self.names = {"trpA": 783, "trpBA": 489, "chuAalbertii": 136, "citPferg": 300, "chuA": 288, "yjaA": 211, "TspE4.C2": 152, "arpA": 400, "fdm": 265, "trpAgpC": 219, "aesI": 315, "aesII": 125, "chuIII": 183, "chuIV": 461, "chuV": 600, "ybgD": 177}
 
 ###############################################################################
 #############                FUNCTIONS                            #############
@@ -208,7 +209,7 @@ def pcr_parser_groups(quadruplex):
             quadruplex.append('-')
     #return the specific primers (grp E or C disambiguity)
     specific = []
-    specific_names = ["chuAalbertii", "citPferg", "aesI", "aesII", "chuIII", "chuIV", "chuV", 'fdm', 'trpAgpC', 'cfaB', 'ybgD']
+    specific_names = ["chuAalbertii", "citPferg", "aesI", "aesII", "chuIII", "chuIV", "chuV", 'fdm', 'trpAgpC']
     for name in specific_names:
         if name in pcr_products:
             specific.append(name)
@@ -272,7 +273,10 @@ def find_phylo_group(markers):
                 if "TspE4.C2" in markers:
                     return("B2")
                 else:
-                    return("B2")
+                    if "fdm" in markers:
+                        return("H")
+                    else:
+                        return("B2")
             else:
                 if "TspE4.C2" in markers:
                     if "ybgD" in markers:

@@ -1,7 +1,5 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [](#lang-au)
 
-![image](https://user-images.githubusercontent.com/85880892/192553225-a1adc207-af8e-40fe-b56c-47d2e47ca335.png)
-
 # ClermonTyping: an easy-to-use and accurate *in silico* method for *Escherichia* genus strain phylotyping
 
 ## Contents
@@ -54,32 +52,16 @@ __http://clermontyping.iame-research.center/.__
 % clermonTyping.sh
 Script usage :
 	-h				: print this message and exit
-        -v                              : print the version and exit
-        --fasta                         : fasta contigs file(s). If multiple files, they must be separated by an arobase (@) value
-        --name                          : name for this analysis (optional)
-        --threshold                     : option for ClermontTyping, do not use contigs under this size (optional)
-        --minimal                       : output a minimal set of files (optional)
-        --fastafile                     : file with path of fasta contig file.  One file by line (optional)
-        --summary                       : file with path of *_phylogroups.txt. One file by line (optional)
+	--fasta				: fasta contigs file(s). If multiple files, they must be separated by an arobase (@) value
+	--name				: name for this analysis (optional)
+	--threshold			: Option for ClermontTyping, do not use contigs under this size (optional)
 ```
 
-This script will execute the pipeline blast, mash and python to give the full output (html file by default) or only the `*_phylogroups.txt` files (--minmal). 
-
-If you need to analyse several fasta files you can list them with a @ sign (absolute path required):
+This script will execute the pipeline blast, mash and python to give the full output (html file). If you need to analyse several fasta files you can list them with a @ sign (absolute path required):
 ```
 % clermonTyping.sh --fasta my_ecoli1.fasta@my_ecoli2.fasta@my_ecoli3.fasta
 ```
-or use a file with the option --fastafile:
-```
-% clermonTyping.sh --fastafile fileWithFasta.txt
-```
 
-Exemple of fileWithFasta.txt
-```
-my_ecoli1.fasta
-my_ecoli2.fasta
-my_ecoli3.fasta
-```
 
 ### Clermont Typing without mash and R
 
@@ -145,6 +127,5 @@ ROAR344_fergusonii.fasta	['trpA', 'trpBA', 'aesI']	['-', '-', '-', '-']	[]	Fergu
 ## Citing
 Please cite:
 
-[Beghain, J., Bridier-Nahmias, A., Le Nagard, H., Denamur, E. & Clermont, O. ClermonTyping: an easy-to-use and accurate in silico method for Escherichia genus strain phylotyping. Microbial Genomics (2018). doi:10.1099/mgen.0.000192](https://doi.org/10.1099/mgen.0.000192)
+[Beghain, J., Bridier-Nahmias, A., Le Nagard, H., Denamur, E. & Clermont, O. ClermonTyping: an easy-to-use and accurate in silico method for Escherichia genus strain phylotyping. Microbial Genomics (2018). doi:10.1099/mgen.0.000192](http://mgen.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.000192)
 
-[Clermont O., Dixit O.V.A., Vangchhia B., Condamine B., Dion S., Bridier-Nahmias A., Denamur E. & Gordon D. Characterization and rapid identification of phylogroup G in Escherichia coli, a lineage with high virulence and antibiotic resistance potential. Environ Microbiol (2019). doi: 10.1111/1462-2920.14713](https://doi.org/10.1111/1462-2920.14713)
