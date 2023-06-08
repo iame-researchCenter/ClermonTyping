@@ -1,0 +1,2 @@
+data/primers.fasta filter=lfs diff=lfs merge=lfs -text
+data/mash/mash_reference.msh filter=lfs diff=lfs merge=lfs -text

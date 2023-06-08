@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Current Version - 21.03: Mar 2021
+Current Version - 23.06: Jun 2023
+        23.06:
+            -  Add fdm markers with quadruplex -++- to select B2 or H
         21.03:
-	    - Adding an essential primer for F group
             - Change the mash database 
-	21.02: 
+	    21.02: 
             - Change arpAgpE primers by fdm primers for E group
         1.4.0:
             - Adding an essential primer for G group
@@ -272,7 +273,10 @@ def find_phylo_group(markers):
                 if "TspE4.C2" in markers:
                     return("B2")
                 else:
-                    return("B2")
+                    if "fdm" in markers:
+                        return("H")
+                    else:
+                        return("B2")
             else:
                 if "TspE4.C2" in markers:
                     if "ybgD" in markers:
